@@ -19,7 +19,7 @@
 
 **Step 1: Granular Field Submission (Web App)** Sales officers upload photos via a custom interface. The system ensures every upload is tagged with a complete data string: **Area, Town, DB Code, DB Name, Outlet Code, Outlet Name, and Route**. This eliminates the possibility of "orphan" data.
 <p align="center">
-  <img src="images/Web_App.jpg" width="90%" alt="Web App Interface" />
+  <img src="images/Web%20App.jpg" width="90%" alt="Web App Interface" />
 </p>
 
 **Step 2: Intelligent Hierarchy (Apps Script + AI)** Google Apps Script processes the upload and triggers the **Gemini Vision API** to check for "Shelf Talker" presence and SKU quantity. Simultaneously, the script renames and files the image into a deep-folder structure:  
