@@ -25,7 +25,7 @@
 **Step 2: Intelligent Hierarchy (Apps Script + AI)** Google Apps Script processes the upload and triggers the **Gemini Vision API** to check for "Shelf Talker" presence and SKU quantity. Simultaneously, the script renames and files the image into a deep-folder structure:  
 `Root > Area > Town > Route > [Outlet_Code]_[Timestamp].jpg`
 <p align="center">
-  <img src="images/App_Script_API.jpg" width="90%" alt="Apps Script and AI Logic" />
+  <img src="images/App%20Script.jpg" width="90%" alt="Apps Script and AI Logic" />
 </p>
 
 **Step 3: Automated Ledger (Google Sheets)** The final audit results and metadata are appended to a master database. This structured log allows for instant filtering by **DB Name** or **Route** to identify specific gaps in retail execution.
