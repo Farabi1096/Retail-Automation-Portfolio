@@ -30,7 +30,7 @@
 
 **Step 3: Automated Ledger (Google Sheets)** The final audit results and metadata are appended to a master database. This structured log allows for instant filtering by **DB Name** or **Route** to identify specific gaps in retail execution.
 <p align="center">
-  <img src="images/Google_Sheet.jpg" width="90%" alt="Google Sheet Database" />
+  <img src="images/Google%20Sheet.jpg" width="90%" alt="Google Sheet Database" />
 </p>
 
 ---
