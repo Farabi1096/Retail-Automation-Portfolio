@@ -9,39 +9,40 @@
 ---
 
 ### ![P7](https://img.shields.io/badge/Project_7-AI_Retail_Display_Audit-FF0000?style=for-the-badge&logo=googlecloud&logoColor=white)
-> **Problem:** Manual verification of retail display compliance (shelf talkers, stock availability) is slow and subjective. Field photos are often uploaded without structure, making audit trails nearly impossible to manage.  
-> **Solution:** An AI-integrated Web App that validates display modality in real-time, extracts SKU-level data, and automatically organizes assets into a searchable cloud hierarchy.
 
+> **Problem:** Manual verification of retail display compliance (shelf talkers, stock availability) is slow and unorganized. Field photos are often uploaded without structure, making audit trails impossible to manage.  
+> **Solution:** An AI-integrated pipeline that validates display modality in real-time, extracts SKU-level data, and automatically organizes assets into a searchable cloud hierarchy.
+
+---
+
+#### 🔄 Step-by-Step Workflow
+
+**Step 1: Field Data Collection (Web App Interface)** The process begins with Sales Officers using a custom mobile-responsive web portal to upload high-resolution display photos directly from the outlet.
 <p align="center">
-  <img src="images/Display_App_Interface.jpg" width="45%" alt="Web App Interface" />
-  <img src="images/AI_Audit_Logic.jpg" width="45%" alt="AI Analysis Result" />
+  <img src="images/Web_App.jpg" width="90%" alt="Web App Interface" />
 </p>
 
-#### 🔑 Key Features
-* **Automated Data Capture:** Sales officers upload photos via a custom web portal; the system automatically maps the **Area, Town, DB Code, and DB Name** to a centralized Google Sheet.
-* **Vision AI Audit Engine:** Utilizes **Google Gemini API** via Apps Script to perform real-time image analysis:
-    * **Modality Check:** Confirms if "Shelf Talkers" and specific branding materials are present.
-    * **Product Verification:** Identifies if the correct products are displayed and estimates available quantity.
-    * **Image Validation:** Filters out non-retail or duplicate images to ensure data integrity.
-* **Dynamic File Hierarchy:** A custom-built **Apps Script** renames and moves images into a structured Drive directory based on business logic:  
+**Step 2: Intelligent Processing (Apps Script & Gemini AI)** Once uploaded, **Google Apps Script** triggers the **Gemini Vision API**. The AI audits the image for "Shelf Talker" compliance and product availability while a custom script renames the file based on the **Area > Town > DB Code** hierarchy.
+<p align="center">
+  <img src="images/App_Script_API.jpg" width="90%" alt="Apps Script and AI Logic" />
+</p>
+
+**Step 3: Centralized Data Logging (Google Sheets)** All audit results, including AI-generated compliance scores and SKU quantities, are logged into a master Google Sheet. This acts as the "Single Source of Truth" for regional performance tracking.
+<p align="center">
+  <img src="images/Google_Sheet.jpg" width="90%" alt="Google Sheet Database" />
+</p>
+
+---
+
+#### 🔑 Key Technical Features
+* **Vision AI Audit Engine:** Automatically detects if branding materials are present and filters out non-retail or duplicate images.
+* **Dynamic File Hierarchy:** Images are moved into structured Drive directories:  
   `Root > Area > Town > DB_Code > [Timestamp]_Display.jpg`
+* **Real-time Metadata Mapping:** Automatically logs **Area, Town, and DB Name** without manual entry by the officer.
 
----
-
-### 📂 Technical Breakdown
-
-| Component | Technology | Role |
-| :--- | :--- | :--- |
-| **Frontend** | HTML5 / JavaScript | Responsive mobile interface for field-based uploads. |
-| **Logic Layer** | Google Apps Script | Serves as the middleware for API handling and Drive automation. |
-| **AI Engine** | Gemini Pro Vision | Processes visual data for compliance and SKU count. |
-| **Database** | Google Sheets | Acts as the real-time ledger for all transaction metadata. |
-
----
-
-### 💡 Impact
-* **Eliminated Manual Sorting:** 100% automation of image renaming and filing into the correct regional folders.
-* **Instant Compliance Feedback:** Reduced the audit cycle from days to seconds, allowing Sales Officers to correct displays while still on-site.
-* **Scalable Reporting:** Created a clean, structured dataset ready for Power BI visualization or SQL analysis.
+#### 💡 Project Impact
+* **100% Automated Renaming:** Eliminated manual file sorting for thousands of field uploads.
+* **Instant Compliance Feedback:** Reduced the audit cycle from days to seconds, allowing for immediate on-site corrections.
+* **Structured Data Ready:** The clean Google Sheet backend allows for instant connection to **Power BI** for high-level management dashboards.
 
 ---
